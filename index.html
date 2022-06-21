@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Universal Sentence Encoder + TensorFlow.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+  </head>  
+  
+  <body>
+    
+  <div style="width:100%; padding:5px" >
+
+  <lottie-player
+    id="logo" 
+    src="https://assets1.lottiefiles.com/packages/lf20_6h0s5cxq.json"
+    style="width:150px; height:150px"
+  ></lottie-player>
+
+  <h1 id="title">Stampy.ai</h1>
+
+  <p id="status">Awaiting TF.js load</p>
+
+    <button id="encode" disabled>Encode Questions</button>
+    <button id="search" disabled>Semantic Search</button>
+    <button id="download" disabled>Download Encodings</button> 
+    <button id="bounce">Bounce</button>
+    <button id="blink">Blink</button>
+    <button id="stop">Stop</button>
+    <br/>
+
+    <input type="search" id="question" name="question" value="My custom question here?" class="invisible" disabled>
+    <div id="results" class="dropdown-content">
+      <a href="#q1">Question 1</a>
+      <a href="#q2">Question 2</a>
+      <a href="#q3">Question 3</a>
+      <a href="#q4">Question 4</a>
+      <a href="#q5">Question 5</a>
+    </div>
+  </div>
+
+  </body>
+    
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <!-- Import Lottie.js library -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js" type="text/javascript"></script>
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="/script.js" defer></script>
+  
+  </body>
+</html>

@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* https://css-tricks.com/a-dry-approach-to-color-themes-in-css/ */
+  --light: initial;
+  --dark: ;
+  --bgColor: var(--light, #fff) var(--dark, #333);
+  --bgColorQuestionTitle: var(--light, #bbdefb) var(--dark, #444);
+  --bgColorQuestionAnswer: var(--light, #eff) var(--dark, #333);
+  --bgColorCopied: #e4d4b6;
+  --colorText: var(--light, #222) var(--dark, #eee);
+  --colorTitle: var(--light, #666) var(--dark, #bbb);
+  --colorTitleHighlight: #d9816b;
+  --colorQuestionTitle: var(--light, #333) var(--dark, #ccc);
+  --colorLink: #68f;
+  --colorLinkVisited: #8ac;
+  --colorButtonText: #8aacc8;
+  --paddingSides: clamp(8px, 2vw, 16px);
+}
+
+:root.dark {
+  --light: ;
+  --dark: initial;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: ;
+    --dark: initial;
+  }
+
+  :root.light {
+    --light: initial;
+    --dark: ;
+  }
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 var(--paddingSides);
+  color: var(--colorText);
+  background-color: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--colorLink);
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 0 48px;
+}
+
+h1 {
+  font-style: italic;
+  color: #FF6F00;
+}
+
+#question {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#question:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #f6f6f6;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+button {
+    margin: 4px;
+    padding: 4px;
+}
